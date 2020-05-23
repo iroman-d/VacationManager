@@ -1,0 +1,66 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+
+    <div class="container">
+
+            {% for item in requests %}
+                <form action="{% url 'accounts:status_edit' %}" method="post" autocomplete="off">
+                        {% csrf_token %}
+                    <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Leave Request</div>
+                    <div class="panel-body">
+                        {% if error_message %}
+                            <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                        {% endif %}
+                          <div class="form-group clearfix">
+                            <label for="{{ form.last_name.id_for_label }}" class="col-md-4 control-label text-center">Start Date:</label>
+                             <div class="col-md-6">
+                                {{ item.start_date }}
+                            </div>
+                        </div>
+                      <div class="form-group clearfix">
+                            <label for="{{ form.last_name.id_for_label }}" class="col-md-4 control-label text-center">End Date:</label>
+                             <div class="col-md-6">
+                                {{ item.end_date }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.last_name.id_for_label }}" class="col-md-4 control-label text-center">First Name:</label>
+                             <div class="col-md-6">
+                                {{ item.first_name }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.last_name.id_for_label }}" class="col-md-4 control-label text-center">Last Name:</label>
+                            <div class="col-md-6">
+                                {{ item.last_name }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.last_name.id_for_label }}" class="col-md-4 control-label text-center">Category:</label>
+                            <div class="col-md-6">
+                                {{ item.category }}
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="{{ form.phone_number.id_for_label }}" class="col-md-4 control-label text-center">Description:</label>
+                            <div class="col-md-6">
+                                {{ item.description }}
+                            </div>
+                        </div>
+                        <div  class="col-md-3 col-md-offset-4">
+                            {% csrf_token %}
+                            <input style="float: left; margin-left: -10px" type="submit" name="Approve" value="Approve" class="btn btn-success">
+                            <input style="float: right; background-color: red; border-color: red" type="submit" name="Reject" value="Reject" class="btn btn-success">
+                            <input type='hidden' name='requested_by' value={{ item.id }} />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+                </form>
+    {% endfor %}
+    </div>
+{% endblock %}

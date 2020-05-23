@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <style>
+        body {
+            font-family: 'MuseoSansCyrl-300', serif;
+        }
+
+        @font-face {
+            font-family: 'MuseoSansCyrl-300';
+            src: url('../static/fonts/MuseoSansCyrl-500.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            display: flex;
+            background: linear-gradient(#00BFA5 30%, #1c2a3a 10%);
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        .wrapper:before {
+            content: '';
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 60%;
+            background-color: #00BFA5;
+
+        }
+
+        .content {
+            border-radius: 6px;
+            max-width: 40%;
+            background-color: #ffffff;
+            border: none;
+            margin: auto;
+        }
+
+
+        .logo {
+            padding-top: 3%;
+            display: block;
+            flex-flow: row;
+            height: 65px;
+            background-color: #00BFA5;
+        }
+
+        .logo__circle {
+            display: inline-block;
+            margin-top: 2%;
+            width: 35px;
+            height: 35px;
+            border-radius: 20px;
+            background-color: #fff;
+            z-index: 2;
+        }
+
+        .logo > span {
+            margin: 2% 0 0 1%;
+            color: #fff;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .notification_block__title {
+            margin: 20px;
+            border-radius: 6px;
+            font-size: 14px;
+
+
+        }
+
+        .notification_block__request {
+            margin: 20px;
+
+        }
+
+        .notification_block__request p {
+            margin: 20px 0;
+            font-size: 14px;
+
+        }
+
+        hr {
+            border-top: 1px solid rgba(142, 142, 142, 0.5);
+        }
+
+        .notification_block__information {
+            padding-left: 6%;
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .notification_block__information___text {
+            margin: 15px 0 10px;
+            font-size: 14px;
+            width: 90%;
+        }
+
+        .notification_block__information___text p {
+            margin: 1% 0 1%;
+            font-size: 16px;
+            width: 90%;
+            font-family: 'MuseoSansCyrl-300', serif;
+        }
+
+        .notification_block__information___text > .subject {
+            color: rgba(142, 142, 142, 0.7);
+            margin-bottom: 4px;
+        }
+
+        .notification_block__information___text > .subject_description {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .subject_request {
+            font-size: 14px !important;
+        }
+
+        .notification_block__information___text > .notification_block__information___text____quote {
+            width: 100%;
+            font-size: 15px;
+            padding-bottom: 5%;
+        }
+
+        .notification__icon img {
+            margin-left: 30%;
+        }
+
+
+        .notification_block__btnContainer {
+            height: 11%;
+            background-color: #e0e0e1;
+            padding: 20px;
+        }
+
+        .notification_block__btnContainer button {
+            border: none;
+            border-radius: 4px;
+            overflow: hidden;
+            padding: 0;
+            width: 240px;
+            cursor: pointer;
+            height: 40px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            background-color: #00BFA5;
+            display: block;
+            margin: 0 auto;
+
+        }
+
+        .footer {
+            background-color: #1c2a3a;
+        }
+
+        .footer_links td {
+            width: 50%;
+
+        }
+
+        .footer_links td a {
+            display: inline-block;
+            color: rgba(200, 200, 200, 1);
+            font-size: 12px;
+            text-align: center;
+            padding: 5% 0;
+        }
+
+        .first_link {
+            margin-left: 2%;
+        }
+
+        .second_link {
+            display: block;
+            text-align: end !important;
+            margin-right: 2%;
+            float: right;
+        }
+
+        .footer p {
+            margin: 2% 2% 0 2%;
+            text-align: center;
+            color: rgba(200, 200, 200, 1);
+            font-size: 11px;
+        }
+
+        .quote {
+            vertical-align: baseline !important;
+        }
+
+        .quote img {
+            margin-left: 50%;
+        }
+
+        @media (max-width: 1200px) {
+            table.content {
+                max-width: 46%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            table.content {
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 900px) {
+            table.content {
+                max-width: 56%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            table.content {
+                max-width: 66%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            img {
+                width: 30px !important;
+                height: 30px !important;
+                margin-left: 28%;
+            }
+
+            .quote {
+                padding-top: 13px;
+            }
+
+            .quote img {
+                margin-left: 45%;
+            }
+
+            table.content {
+                max-width: 100%;
+            }
+
+            .logo__circle {
+                display: none;
+            }
+
+            .notification_block__btnContainer button {
+                width: 100%;
+            }
+
+            .first_link {
+                margin-left: 2%;
+            }
+
+            .second_link {
+                display: block;
+                text-align: end;
+                margin-right: 2%;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .quote {
+                padding-top: 13px;
+            }
+
+            .quote img {
+                margin-left: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <table border="0" cellpadding="0" cellspacing="0" class="content">
+        <tr>
+            <th style=" background-color: transparent;">
+                <div class="logo">
+                    <div class="logo__circle"></div>
+                    <span>RoadUp</span>
+                </div>
+            </th>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="notification_block__title">
+                    <h4>New ride created</h4>
+                </div>
+                <hr>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="notification_block__request">
+                    <p>Hi Olesia,</p>
+                    <p>Vika create new ride to Lviv in 20:00 with</p>
+                </div>
+                <hr>
+            </td>
+        </tr>
+
+    </table>
+
+
+</div>
+</body>
+</html>
