@@ -2,7 +2,7 @@ asgiref==3.2.7
 Django==2.2.10
 django-crispy-forms==1.9.1
 django-widget-tweaks==1.4.8
-Jinja2==2.11.2
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 python-http-client==3.2.7
 pytz==2020.1
