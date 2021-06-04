@@ -1,5 +1,5 @@
 asgiref==3.2.7
-Django==2.2.10
+Django==2.2.21
 django-crispy-forms==1.9.1
 django-widget-tweaks==1.4.8
 Jinja2==2.11.2
